@@ -1,0 +1,233 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".TimerOutActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/button_detect"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/detect_devices" />
+
+        <Spinner
+            android:id="@+id/spinner_daqDev"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/button_connect"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/connect_device"
+            tools:ignore="ButtonStyle" />
+
+        <Button
+            android:id="@+id/button_disconnect"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/disconnect_device"
+            tools:ignore="ButtonStyle" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="5dp" >
+
+        <TextView
+            android:id="@+id/textView_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/status_text"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/textView_errInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/empty"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#165B12" 
+            android:paddingBottom="7dp"/>
+    </LinearLayout>
+    
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FCFCFC" >
+
+	    <RelativeLayout
+	        android:id="@+id/RelativeLayout1"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginBottom="0dp"
+	        android:layout_marginLeft="0dp"
+	        android:layout_marginRight="0dp"
+	        android:layout_marginTop="10dp"
+	        android:background="#FCFCFC"
+	        android:orientation="vertical" >
+
+	        <Spinner
+	            android:id="@+id/spinner_tmr"
+	            android:layout_width="150dp"
+	            android:layout_height="wrap_content"
+	            android:layout_alignParentTop="true"
+	            android:layout_marginLeft="5dp"
+	            android:layout_marginTop="5dp"
+	            android:layout_toRightOf="@+id/textView_tmr" />
+
+	        <TextView
+	            android:id="@+id/textView_tmr"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignParentLeft="true"
+	            android:layout_alignTop="@id/spinner_tmr"
+	            android:layout_marginLeft="35dp"
+	            android:layout_marginTop="10dp"
+	            android:text="@string/tmr_text"
+	            android:textAppearance="?android:attr/textAppearanceSmall"
+	            android:textColor="#0E139F" />
+
+	        <TextView
+	            android:id="@+id/textView_frequency"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignRight="@id/textView_tmr"
+	            android:layout_below="@id/spinner_tmr"
+	            android:layout_marginTop="18dp"
+	            android:text="@string/frequency_text"
+	            android:textAppearance="?android:attr/textAppearanceSmall"
+	            android:textColor="#0E139F" />
+
+	        <EditText
+	            android:id="@+id/editText_frequency"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignLeft="@id/spinner_tmr"
+	            android:layout_alignRight="@id/spinner_tmr"
+	            android:layout_below="@id/spinner_tmr"
+	            android:layout_marginTop="5dp"
+	            android:ems="10"
+	            android:inputType="numberDecimal" >
+	        </EditText>
+
+	        <EditText
+	            android:id="@+id/editText_dutyCycle"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignLeft="@+id/editText_frequency"
+	            android:layout_alignRight="@+id/editText_frequency"
+	            android:layout_below="@+id/editText_frequency"
+	            android:ems="10"
+	            android:inputType="numberDecimal" />
+
+	        <TextView
+	            android:id="@+id/textView_dutyCycle"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignBaseline="@+id/editText_dutyCycle"
+	            android:layout_alignBottom="@+id/editText_dutyCycle"
+	            android:layout_toLeftOf="@+id/spinner_tmr"
+	            android:text="@string/dutyCycle_text"
+	            android:textAppearance="?android:attr/textAppearanceSmall"
+	            android:textColor="#0E139F" />
+
+	        <EditText
+	            android:id="@+id/editText_pulseCount"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignLeft="@+id/editText_dutyCycle"
+	            android:layout_alignRight="@+id/editText_dutyCycle"
+	            android:layout_below="@+id/editText_dutyCycle"
+	            android:ems="10"
+	            android:inputType="number" />
+
+	        <TextView
+	            android:id="@+id/textView_pulseCount"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignBaseline="@+id/editText_pulseCount"
+	            android:layout_alignBottom="@+id/editText_pulseCount"
+	            android:layout_toLeftOf="@+id/spinner_tmr"
+	            android:text="@string/pulseCount_text"
+	            android:textAppearance="?android:attr/textAppearanceSmall"
+	            android:textColor="#0E139F" />
+
+	        <EditText
+	            android:id="@+id/editText_initialDelay"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignLeft="@+id/editText_pulseCount"
+	            android:layout_alignRight="@+id/editText_pulseCount"
+	            android:layout_below="@+id/editText_pulseCount"
+	            android:ems="10"
+	            android:inputType="numberDecimal" />
+
+	        <TextView
+	            android:id="@+id/textView_initialDelay"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignBaseline="@+id/editText_initialDelay"
+	            android:layout_alignBottom="@+id/editText_initialDelay"
+	            android:layout_toLeftOf="@+id/spinner_tmr"
+	            android:text="@string/initialDelay_text"
+	            android:textAppearance="?android:attr/textAppearanceSmall"
+	            android:textColor="#0E139F" />
+
+	        <Spinner
+	            android:id="@+id/spinner_idleState"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignLeft="@+id/editText_initialDelay"
+	            android:layout_alignRight="@+id/editText_initialDelay"
+	            android:layout_below="@+id/editText_initialDelay" />
+
+	        <TextView
+	            android:id="@+id/textView_idleState"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignTop="@+id/spinner_idleState"
+	            android:layout_marginTop="10dp"
+	            android:layout_toLeftOf="@+id/spinner_tmr"
+	            android:text="@string/idleState_text"
+	            android:textAppearance="?android:attr/textAppearanceSmall"
+	            android:textColor="#0E139F" />
+
+	        <ToggleButton
+	            android:id="@+id/toggleButton_start"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignLeft="@+id/spinner_idleState"
+	            android:layout_alignRight="@+id/spinner_idleState"
+	            android:layout_below="@+id/spinner_idleState"
+	            android:textOff="@string/start_button"
+	            android:textOn="@string/stop_button" />
+
+	    </RelativeLayout>
+
+     </ScrollView>
+</LinearLayout>

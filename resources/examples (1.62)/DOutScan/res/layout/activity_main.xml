@@ -1,0 +1,248 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".DOutScanActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/button_detect"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/detect_devices" />
+
+        <Spinner
+            android:id="@+id/spinner_daqDev"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/button_connect"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/connect_device"
+            tools:ignore="ButtonStyle" />
+
+        <Button
+            android:id="@+id/button_disconnect"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/disconnect_device"
+            tools:ignore="ButtonStyle" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="5dp" >
+
+        <TextView
+            android:id="@+id/textView_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/status_text"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/textView_errInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/empty"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#165B12" 
+            android:paddingBottom="7dp"/>
+    </LinearLayout>
+    
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FCFCFC" >
+
+	    <RelativeLayout
+	        android:id="@+id/RelativeLayout1"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginBottom="0dp"
+	        android:layout_marginLeft="0dp"
+	        android:layout_marginRight="0dp"
+	        android:layout_marginTop="10dp"
+	        android:background="#FCFCFC"
+	        android:orientation="vertical" >
+
+	        <Spinner
+	            android:id="@+id/spinner_port"
+	            android:layout_width="150dp"
+	            android:layout_height="wrap_content"
+	            android:layout_alignParentTop="true"
+	            android:layout_marginLeft="5dp"
+	            android:layout_marginTop="5dp"
+	            android:layout_toRightOf="@+id/textView_digitalPort" />
+
+	        <TextView
+	            android:id="@+id/textView_digitalPort"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignParentLeft="true"
+	            android:layout_alignTop="@id/spinner_port"
+	            android:layout_marginLeft="80dp"
+	            android:layout_marginTop="10dp"
+	            android:text="@string/port_text"
+	            android:textAppearance="?android:attr/textAppearanceSmall"
+	            android:textColor="#0E139F" />
+
+	        <EditText
+	            android:id="@+id/editText_rate"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignLeft="@id/spinner_port"
+	            android:layout_alignRight="@id/spinner_port"
+	            android:layout_below="@id/spinner_port"
+	            android:ems="10"
+	            android:inputType="numberDecimal" >
+
+	            <requestFocus />
+	        </EditText>
+
+	        <TextView
+	            android:id="@+id/textView_value"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignRight="@id/textView_digitalPort"
+	            android:layout_below="@id/spinner_port"
+	            android:layout_marginTop="10dp"
+	            android:text="@string/rate_text"
+	            android:textAppearance="?android:attr/textAppearanceSmall"
+	            android:textColor="#0E139F" />
+
+	        <Spinner
+	            android:id="@+id/spinner_outputType"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignLeft="@+id/editText_rate"
+	            android:layout_alignRight="@+id/editText_rate"
+	            android:layout_below="@+id/spinner_trigType"
+	            android:layout_marginTop="1dp" />
+
+	        <TextView
+	            android:id="@+id/textView_outputType"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignTop="@+id/spinner_outputType"
+	            android:layout_marginTop="10dp"
+	            android:layout_toLeftOf="@+id/spinner_port"
+	            android:text="@string/output_text"
+	            android:textColor="#0E139F" />
+
+	        <ToggleButton
+	            android:id="@+id/toggleButton_start"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignLeft="@+id/spinner_outputType"
+	            android:layout_alignRight="@+id/spinner_outputType"
+	            android:layout_below="@+id/spinner_outputType"
+	            android:layout_marginTop="3dp"
+	            android:textOff="@string/start_button"
+	            android:textOn="@string/stop_button" />
+	        
+	         <CheckBox
+	            android:id="@+id/checkBox_continuous"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_below="@+id/editText_rate"
+	            android:layout_toRightOf="@+id/textView_trigType" />
+	        
+	         <CheckBox
+                android:id="@+id/checkBox_extclock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/checkBox_continuous"
+                android:layout_toRightOf="@+id/textView_trigType" />
+            
+            <CheckBox
+                android:id="@+id/checkBox_exttrig"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/checkBox_extclock"
+                android:layout_toRightOf="@+id/textView_trigType" />
+
+	        <TextView
+	            android:id="@+id/textView_continuous"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignTop="@+id/checkBox_continuous"
+	            android:layout_marginTop="13dp"
+	            android:layout_toLeftOf="@+id/checkBox_continuous"
+	            android:layout_alignRight="@id/textView_digitalPort"
+	            android:text="@string/continuous_text"
+	            android:textAppearance="?android:attr/textAppearanceSmall"
+	            android:textColor="#0E139F" />
+	        
+	        <TextView
+                android:id="@+id/TextView_extClock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"    
+                android:layout_marginTop="13dp"
+                android:layout_alignTop="@+id/checkBox_extclock"
+                android:layout_toLeftOf="@+id/checkBox_extclock"
+                android:text="@string/extclock_text"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#0E139F" />
+            
+             <TextView
+                 android:id="@+id/TextView_extTrig"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="13dp"
+                 android:layout_alignTop="@+id/checkBox_exttrig"
+                 android:layout_toLeftOf="@+id/checkBox_exttrig"
+                 android:text="@string/exttrig_text"
+                 android:textAppearance="?android:attr/textAppearanceSmall"
+                 android:textColor="#0E139F" />
+             
+              <Spinner
+                android:id="@+id/spinner_trigType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/editText_rate"
+                android:layout_alignRight="@id/editText_rate"
+                android:layout_below="@id/checkBox_exttrig" />
+
+            <TextView
+                android:id="@+id/textView_trigType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/spinner_trigType"
+                android:layout_below="@id/editText_rate"
+                android:layout_marginTop="10dp"
+                android:layout_toLeftOf="@id/spinner_port"
+                android:text="@string/trigType_text"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#0E139F" />
+
+	       
+	    </RelativeLayout>
+
+     </ScrollView>
+</LinearLayout>

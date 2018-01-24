@@ -1,0 +1,72 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.app.asthma.HomeFragment">
+
+    <LinearLayout
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:orientation="vertical">
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/timerTime"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            />
+
+    <Button
+        android:id="@+id/search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:background="@drawable/btn_white_round_selector"
+        android:layout_gravity="center"
+        android:drawablePadding="@dimen/activity_horizontal_small_margin"
+        android:gravity="center|center_vertical"
+        android:paddingLeft="@dimen/activity_horizontal_small_margin"
+        android:paddingRight="@dimen/activity_horizontal_small_margin"
+        android:singleLine="true"
+        android:text="@string/search"
+        android:textColor="@color/black"
+        android:textSize="@dimen/small_textsize" />
+
+
+        <TextView
+            android:text="Syncing History Data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/syncStatus"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/medium_textsize"/>
+
+        <TextView
+            android:text="Completed Test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/testStatus"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/medium_textsize"/>
+
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/top"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="89dp" />
+
+
+</RelativeLayout>

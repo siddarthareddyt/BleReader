@@ -1,0 +1,377 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:tag="realtimeFragmentTag"
+    android:id="@+id/realtimeFrame">
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.app.asthma.RealTimeFragment"
+    android:tag="realtimeFragment"
+    android:id="@+id/dataView">
+
+
+
+    <LinearLayout
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:weightSum="1">
+
+        <Button
+            android:id="@+id/disconnect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:background="@drawable/btn_white_round_selector"
+            android:layout_gravity="center"
+            android:drawablePadding="@dimen/activity_horizontal_small_margin"
+            android:gravity="center|center_vertical"
+            android:paddingLeft="@dimen/activity_horizontal_small_margin"
+            android:paddingRight="@dimen/activity_horizontal_small_margin"
+            android:singleLine="true"
+            android:text="@string/disconnect"
+            android:textColor="@color/black"
+            android:textSize="@dimen/small_textsize"
+            android:layout_weight="0.24" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:weightSum="1"
+        android:orientation="vertical"
+        android:layout_below="@+id/top">
+
+
+        <TextView
+            android:text="DeviceName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/deviceName"/>
+
+    <LinearLayout
+        android:id="@+id/heatingLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:weightSum="1"
+        android:orientation="horizontal"
+        android:layout_below="@+id/deviceName">
+
+        <TextView
+            android:text="No Data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/preheating"/>
+
+        <Space android:layout_width="10dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="Heater:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/heater"/>
+
+        <Space android:layout_width="5dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="No Data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/heaterValue"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/OzoneHighLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:weightSum="1"
+        android:orientation="horizontal"
+        android:layout_below="@+id/heatingLayout">
+
+        <TextView
+            android:text="OzoneHigh:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ozoneHigh"/>
+
+        <Space android:layout_width="20dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="No Data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ozoneHighValue"/>
+
+    </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/OzoneLowLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:weightSum="1"
+            android:orientation="horizontal"
+            android:layout_below="@+id/OzoneHighLayout">
+
+            <TextView
+                android:text="OzoneLow:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ozoneLow"/>
+
+            <Space android:layout_width="20dp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:text="No Data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ozoneLowValue"/>
+
+        </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/TemperatureLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:weightSum="1"
+            android:orientation="horizontal"
+            android:layout_below="@+id/OzoneLayout">
+
+            <TextView
+                android:text="Temperature:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/temperature"/>
+
+            <Space android:layout_width="20dp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:text="No Data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/temperatureValue"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/HumidityLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:weightSum="1"
+            android:orientation="horizontal"
+            android:layout_below="@+id/TemperatureLayout">
+
+            <TextView
+                android:text="Humidity:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/humidity"/>
+
+            <Space android:layout_width="20dp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:text="No Data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/humidityValue"/>
+
+        </LinearLayout>
+       <!-- <LinearLayout
+            android:id="@+id/ActivityLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:weightSum="1"
+            android:orientation="horizontal"
+            android:layout_below="@+id/HumidityLayout">
+
+            <TextView
+                android:text="Activity:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/activity"/>
+
+            <Space android:layout_width="20dp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:text="No Data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/activityValue"/>
+
+        </LinearLayout> -->
+
+        <LinearLayout
+            android:id="@+id/BatteryLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:weightSum="1"
+            android:orientation="horizontal"
+            android:layout_below="@+id/ActivityLayout">
+
+            <TextView
+                android:text="Battery:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/battery"/>
+
+            <Space android:layout_width="20dp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:text="No Data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/batteryValue"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/AccelrometerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:weightSum="1"
+            android:orientation="horizontal"
+            android:layout_below="@+id/BatteryLayout">
+
+            <TextView
+                android:text="Accelerometer:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/accelrometer"/>
+
+            <Space android:layout_width="20dp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:text="No Data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/accelrometerValue"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <Button
+        android:text="@string/syncButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="132dp"
+        android:id="@+id/sync"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:background="@drawable/btn_white_round_selector"
+        android:layout_gravity="center"
+        android:drawablePadding="@dimen/activity_horizontal_small_margin"
+        android:gravity="center|center_vertical"
+        android:paddingLeft="@dimen/activity_horizontal_small_margin"
+        android:paddingRight="@dimen/activity_horizontal_small_margin"
+        android:textColor="@color/black"
+        android:textSize="@dimen/small_textsize"
+        android:layout_weight="0.24"
+        android:layout_marginBottom="60dp"/>
+
+
+
+</RelativeLayout>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.app.asthma.RealTimeFragment"
+        android:tag="noConnection"
+        android:id="@+id/noDataView">
+
+        <LinearLayout
+            android:id="@+id/noCon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:weightSum="1">
+
+        <TextView
+            android:text="No Real Time Data Available now."
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/deviceNotCon"
+            android:layout_gravity="center"/>
+        </LinearLayout>
+
+        </RelativeLayout>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.app.asthma.RealTimeFragment"
+        android:tag="sync"
+        android:id="@+id/syncStatusView">
+
+        <LinearLayout
+            android:id="@+id/syncStat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:weightSum="1">
+
+            <TextView
+                android:text="Syncing..."
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/syncstatus"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>

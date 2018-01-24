@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AIn</string>
+    <string name="detect_devices">Detect DAQ devices</string>
+    <string name="connect_device">Connect</string>
+    <string name="disconnect_device">Disconnect</string>
+    <string name="status_text">&quot;Status: &quot;</string>
+    <string name="empty"></string>
+    <string name="chan_text">Channel:</string>
+    <string name="chanMode_text">Channel Mode:</string>
+    <string name="range_text">Range:</string>
+    <string name="unit_text">Unit:</string>
+    <string name="value_text">Data value:</string>
+    <string name="start_button">Start</string>
+    <string name="stop_button">Stop</string>
+    <string name="net_detect_text">Detect</string>
+    <string name="cancel_text">Cancel</string>
+    <string name="ip_addr_text">IP address or host name:</string>
+    <string name="port_text">Port:</string>
+
+</resources>

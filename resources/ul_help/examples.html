@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<title>Universal Library (UL) for Android Example Applications</title>
+	
+	<link href="stylesheet.css" rel="stylesheet" type="text/css">
+	
+	<style>
+		h1 {font: 1.25em calibri};
+		h2 {font: 1em calibri};
+		h1, h2 {font-weight:bold};
+		h1, h2 {margin: .25em 0 .15em}; /* top, right-left, bottom */
+		p, li {font: 0.75em calibri; margin: 0.5em 0 .5em};
+		li.none {list-style-type: none}; 
+		 
+		table.bordered {
+			border: 1px solid #000000;
+			border-collapse: collapse;	
+			margin: 0.25em 0 1em 1em;	
+		}
+	
+		td, th{
+			font: 0.75em calibri;
+			border: 1px solid #000000;
+			padding: 0.35em 1em; /* top-bottom, left-right */	 
+		}
+	</style>
+
+</head>
+
+<body>
+<h1>Universal Library (UL) for Android Example Projects</h1>
+
+<p>The UL for Android package includes example projects that you can install and run on an Android device. The source code for each example is stored in an Android project. To run an example project, you must create a new project and import the source code into your workspace.</p>
+
+<!-- Importing the source code =========================================================================-->
+<h2>Importing the Example Project Source Code into Eclipse</h2>
+<p>Complete the following steps to import a UL for Android example project into a workspace:</p>
+
+<ol>
+	<li>Run Eclipse, choose a workspace folder, and click <strong>OK</strong>.<br>To create a new folder, enter a name in the  <strong>Workspace</strong> textbox.</li>
+	<li>Select <strong>File&raquo;New&raquo;Project</strong>.<br>The <strong>New Project</strong> dialog box opens.</li>
+	<li>Expand the Android folder, select <strong>Android Project from Existing Code</strong>, and click <strong>Next</strong>.<br>The <strong>Import Projects</strong> dialog box opens.</li>
+	<li>Click <strong>Browse</strong> and navigate to the folder containing the example projects.</li>
+	<li>Select the <strong>Copy projects into workspace</strong> checkbox.<br>When this checkbox is selected, the projects are copied into the current workspace. This is useful if you want to maintain a copy of the example project that is separate from the source file. If you do not select this checkbox, any modifications to the example project are made to the source file.</li>
+	<li>Click <strong>Finish</strong>.</li>
+	<li>Select <strong>Window&raquo;Show View&raquo;Package Explorer</strong> to open the example in the Package Explorer.</li>
+</ol>
+
+<!-- Running the example =============================================================================-->
+<h2>Deploying and Running the Example Project on a Connected Device</h2>
+<p>Before you can run the example projects, you must set up the device as follows:</p>
+<ul>
+	<li>Enable USB debugging on the Android device. Refer to the device documentation for more information about how to do this.</li>
+	
+	<li>If using a Bluetooth device, make sure that the device is already paired with the host Android system.</li>
+</ul>
+<p>Refer to <a href="http://developer.android.com/tools/device.html">Using Hardware Devices</a> for more information about setting up a device.</p>
+
+<ol>
+	<li>From the Package Explorer, select the folder containing the project to run.</li>
+	<li>Select <strong>Run&raquo;Run</strong> and choose <strong>Android Application</strong> from the <strong>Run As</strong> dialog box that opens; click OK.<br>Eclipse installs the example project on the connected device; the example automatically opens when installation is complete.</li>
+<li>Tap the <strong>Detect DAQ devices</strong> button.<br>A list of detected devices appears.</li>
+<li>Select a device and tap the <strong>Connect</strong> button.</li>
+<li>Tap the <strong>Start</strong> button to begin acquiring data.</li>
+<li>Tap the <strong>Stop</strong> button to stop acquiring data.</li>
+<li>Tap the <strong>Disconnect</strong> button to disconnect from the DAQ device.<br>You must disconnect the DAQ device from the current example project before you can run a different example project.</li>
+</ol>
+
+<!-- Example programs ==================================================================================-->
+<h2>UL for Android Example Applications</h2>
+<table class="bordered">
+<tr><td><strong>Example Project Name</strong></td><td><strong>Description</strong></td></tr>
+
+<tr><td>AIn</td><td>Reads an A/D input channel.</td></tr>
+
+<tr><td>AIn_Log</td><td>Reads an A/D input channel and stores the data in a file.</td></tr>
+
+<tr><td>AInScan</td><td>Scans a range of A/D input channels and stores the data in an array.</td></tr>
+
+<tr><td>AInScan_Continuous</td><td>Scans a range of A/D input channels continuously in the background and stores the data in an array.</td></tr>
+
+<tr><td>AInScan_Events</td><td>Scans D/A channels, displays the latest sample acquired every EventSize or more samples, and updates the latest sample upon scan completion or end.</td></tr>
+
+<tr><td>AInScan_ExtClock</td><td> Scans a range of A/D input channels and stores the sample data in an array at a sample rate specified by an external clock.</td></tr>
+
+<tr><td>AInScan_ExtTrigger</td><td>Selects the trigger source used to initiate the A/D conversion using DaqDevice.aInScan() with the AiScanOption.EXTTRIGGER option.</td></tr>
+
+<tr><td>AInScan_LoadQueue</td><td>Prepares a channel gain queue and loads it onto the DAQ device. An analog input function demonstrates how the queue values work.</td></tr>
+
+<tr><td>AInScan_Plot</td><td>Scans a range of A/D input channels continuously in the background, and plots the latest acquired samples.</td></tr>
+
+<tr><td>AOut</td><td>Writes a value to a specified D/A output channel.</td></tr>
+
+<tr><td>AOutScan</td><td> Writes values to a specified D/A output channel.</td></tr>
+
+<tr><td>CIn</td><td>Resets and reads the event counter.</td></tr>
+
+<tr><td>DBitIn</td><td>Reads the status of a single digital input bit.</td></tr>
+
+<tr><td>DBitOut</td><td>Sets the state of a single digital output bit.</td></tr>
+
+<tr><td>DBitSetIn</td><td>Configures the selected port for input, if necessary, then reads and displays the value on the port.</td></tr>
+
+<tr><td>DIn</td><td>Reads a digital input port.</td></tr>
+
+<tr><td>DInScan</td><td>Scans a digital port and stores the sample data in an array.</td></tr>
+
+<tr><td>DOut</td><td>Writes a value to a specified digital output port.</td></tr>
+
+<tr><td>DOutScan</td><td>Writes values to a specified port.</td></tr>
+
+<tr><td>TIn</td><td>Reads a temperature channel and displays the value.</td></tr>
+
+<tr><td>TmrOut</td><td>Sends a frequency output to a specified timer.</td></tr>
+
+</table>
+
+</body>
+</html>
